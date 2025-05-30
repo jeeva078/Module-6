@@ -1,42 +1,35 @@
-# Exp.No:27  
-## Operator Overloading
+# Ex.No:6E Operator Overloading
 
----
+## AIM  
+To write a python program to perform subtraction of two complex number using binary '+' operator overloading ,class name : complex
+Ob1 = complex(1, 2) and Ob2 = complex(2, 3)
 
-### AIM  
-To write a Python program to perform division of two complex numbers using the binary '/' operator overloading. Class name: `Complex`, where the objects `Ob1 = Complex(10, 21)` and `Ob2 = Complex(2, 3)` represent complex numbers.
+## ALGORITHM
 
----
+1. Define a class complex with an __init__() method to initialize the complex numbers a and b.
+2. Define the __add__() method to handle the addition operation for two complex objects.
+3. The __add__() method should return a tuple of the difference of real and imaginary parts.
+4. Create two objects ob1 and ob2 of the complex class with specified real and imaginary values.
+5. Add the two complex objects (ob1 and ob2) using the + operator.
+6. Print the result of the addition (the tuple returned by the __add__() method).
+7. End the program.
 
-### ALGORITHM
-
-1. **Start the Program.**
-2. **Define the Complex class**:
-   - Define the constructor `__init__()` to accept two parameters: `real` and `imag` (representing the real and imaginary parts of the complex number).
-   - Assign these values to `self.real` and `self.imag` respectively.
-3. **Define the `__truediv__()` method** to perform the division of two complex numbers:
-   - Calculate the real part of the result as the division of `self.real` by `other.real`.
-   - Calculate the imaginary part of the result as the division of `self.imag` by `other.imag`.
-   - Return a new Complex object with the calculated real and imaginary parts.
-4. **Define the `__repr__()` method** to represent the complex number as a string.
-   - Return a string formatted to display the real and imaginary parts with one decimal place using `f"{self.real:.1f}, {self.imag:.1f}"`.
-5. **Create two objects of the Complex class**:
-   - `Ob1 = Complex(10, 21)` represents the complex number `10 + 21i`.
-   - `Ob2 = Complex(2, 3)` represents the complex number `2 + 3i`.
-6. **Perform the division operation**: Use the `/` operator to divide `Ob1` by `Ob2`. This will call the `__truediv__()` method.
-7. **Print the result**: Print the result of the division, which will be formatted by the `__repr__()` method.
-8. **End the Program.**
-
----
-
-### PROGRAM
-
+## PROGRAM
 ```
-
+class complex:
+    def __init__(self,a,b):
+        self.a=a
+        self.b=b
+    def __add__(self,other):
+        return self.a-other.a,self.b-other.b
+ob1=complex(1,2)
+ob2=complex(2,3)
+ob3=ob1+ob2
+print(ob3)
 ```
+## OUTPUT
+![Screenshot 2025-04-28 161328](https://github.com/user-attachments/assets/64ec294b-51e5-442a-ac2b-f2e4f20c248b)
 
-### OUTPUT
-
-
-### RESULT
+## RESULT
+Thus a python program to perform subtraction of two complex number using binary '+' operator overloading has been implemented successfully.
 
