@@ -1,44 +1,49 @@
-# Exp.No:28  
-## Abstraction
+# Ex.No:6A Abstraction
 
----
+## AIM  
+To Write an abstract method course () and a method print) visible to the user. The inherited class here is demo class and learn and has their course () method. The objects are created for the respective class and invoke the course () method for both of the classes. 
 
-### AIM  
-To write a Python program to define the abstract base class named `Polygon` and also define the abstract method. This base class is inherited by various subclasses. Implement the abstract method in each subclass. Create objects of the subclasses and invoke the `sides()` method.
+## ALGORITHM
 
----
+1. Import ABC and abstractmethod from abc module.
+2. Define an abstract class educlass with a method print() and an abstract method course().
+3. Create a class testclass that inherits from educlass and defines the course() method.
+4. Create a class democlass that inherits from educlass and defines the course() method.
+5. Create an object t1 of testclass and call its course() method.
+6. Create an object ex of democlass and call its course() method.
+7. Check if t1 is an instance of educlass and print the result.
+8. Check if ex is an instance of educlass and print the result.
+9. End the program.
 
-### ALGORITHM
-
-1. **Start the Program.**
-2. **Import the ABC class** from the `abc` module to implement abstraction.
-3. **Define the abstract base class Polygon**:
-   - Inherit from `ABC` (Abstract Base Class).
-   - Define an abstract method `sides()` with no implementation.
-4. **Define the Triangle class** that inherits from `Polygon`:
-   - Implement the `sides()` method to print `"Triangle has 3 sides"`.
-5. **Define the Pentagon class** that inherits from `Polygon`:
-   - Implement the `sides()` method to print `"Pentagon has 5 sides"`.
-6. **Define the Hexagon class** that inherits from `Polygon`:
-   - Implement the `sides()` method to print `"Hexagon has 6 sides"`.
-7. **Define the Square class** that inherits from `Polygon`:
-   - Implement the `sides()` method to print `"I have 4 sides"`.
-8. **Create an object `t` of the Triangle class** and call the `sides()` method to print the number of sides.
-9. **Create an object `s` of the Square class** and call the `sides()` method to print the number of sides.
-10. **Create an object `p` of the Pentagon class** and call the `sides()` method to print the number of sides.
-11. **Create an object `k` of the Hexagon class** and call the `sides()` method to print the number of sides.
-12. **End the Program.**
-
----
-
-### PROGRAM
+## PROGRAM
+```
+from abc import ABC, abstractmethod
+class educlass(ABC):
+    def print(self,a):
+        print("The value is:  ", a)
+    @abstractmethod
+    def course(self):
+        pass
+    def print(self,a):
+        print(f"The value is:  {a}")
+class testclass(educlass):
+    def course(self):
+        print("This is test class")
+        self.print(500)
+class democlass(educlass):
+    def course(self):
+        print("This is demo class")
+        self.print(850)
+t1=testclass()
+t1.course()
+ex=democlass()
+ex.course()
+print("t1 is instance of educlass? ", isinstance(t1, educlass))
+print("ex is instance of educlass? ", isinstance(ex, educlass))
 
 ```
+## OUTPUT
+![Screenshot 2025-04-28 155854](https://github.com/user-attachments/assets/4146aab5-d451-49b2-92df-6b5291ab0f04)
 
-
-```
-
-### OUTPUT
-
-
-### RESULT
+## RESULT
+Thus an abstract method course () and a method print) visible to the user. The inherited class here is demo class and learn and has their course () method. The objects are created for the respective class and invoke the course () method for both of the classes has been implemented successfully.
